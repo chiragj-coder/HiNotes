@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="{% static 'assets/css/plugins/jquery-ui.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/plugins/magnigy-popup.min.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <script src="https://unpkg.com/feather-icons"></script>
 </head>
 
 <body class="rbt-header-sticky">
@@ -53,7 +54,7 @@
                         <nav class="mainmenu-nav">
                             <ul class="mainmenu">
                                 <li class="with-megamenu has-menu-child-item position-static">
-                                    <a href="#">Home <i class="feather-chevron-down"></i></a>
+                                    <a href="#">Home <i class="feather-chevron-down" data-feather="chevron-down"></i></a>
                                 </li>
                             </ul>
                         </nav>
@@ -68,7 +69,7 @@
                         <div class="mobile-menu-bar d-block d-xl-none">
                             <div class="hamberger">
                                 <button class="hamberger-button rbt-round-btn">
-                                    <i class="feather-menu"></i>
+                                    <i class="feather-menu" data-feather="menu"></i>
                                 </button>
                             </div>
                         </div>
@@ -91,17 +92,17 @@
                         </a>
                     </div>
                     <div class="rbt-btn-close">
-                        <button class="close-button rbt-round-btn"><i class="feather-x"></i></button>
+                        <button class="close-button rbt-round-btn"><i class="feather-x" data-feather="x"></i></button>
                     </div>
                 </div>
                 <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia necessitatibus recusandae eaque?
                 </p>
                 <ul class="navbar-top-left rbt-information-list justify-content-start">
                     <li>
-                        <a href="mailto:hello@example.com"><i class="feather-mail"></i>XXXXXXXXXX@XXX.com</a>
+                        <a href="mailto:hello@example.com"><i class="feather-mail" data-feather="mail"></i>XXXXXXXXXX@XXX.com</a>
                     </li>
                     <li>
-                        <a href="#"><i class="feather-phone"></i>+XX XXXXX XXXXX</a>
+                        <a href="#"><i class="feather-phone" data-feather="phone"></i>+XX XXXXX XXXXX</a>
                     </li>
                 </ul>
             </div>
@@ -109,7 +110,7 @@
             <nav class="mainmenu-nav">
                 <ul class="mainmenu">
                     <li class="with-megamenu has-menu-child-item position-static">
-                        <a href="#">Home <i class="feather-chevron-down"></i></a>
+                        <a href="#">Home <i class="feather-chevron-down" data-feather="chevron-down"></i></a>
                     </li>
                 </ul>
             </nav>
@@ -125,19 +126,19 @@
                     <span class="rbt-short-title d-block">Find Me</span>
                     <ul class="social-icon social-default transparent-with-border justify-content-start mt--20">
                         <li><a href="https://www.facebook.com/">
-                                <i class="feather-facebook"></i>
+                                <i class="feather-facebook" data-feather="facebook"></i>
                             </a>
                         </li>
                         <li><a href="https://www.twitter.com">
-                                <i class="feather-twitter"></i>
+                                <i class="feather-twitter" data-feather="twitter"></i>
                             </a>
                         </li>
                         <li><a href="https://www.instagram.com/">
-                                <i class="feather-instagram"></i>
+                                <i class="feather-instagram" data-feather="instagram"></i>
                             </a>
                         </li>
                         <li><a href="https://www.linkdin.com/">
-                                <i class="feather-linkedin"></i>
+                                <i class="feather-linkedin" data-feather="linkedin"></i>
                             </a>
                         </li>
                     </ul>
@@ -203,6 +204,11 @@
     <script src="{% static 'assets/js/vendor/countdown.js' %}"></script>
     <!-- Main JS -->
     <script src="{% static 'assets/js/main.js' %}"></script>
+
+    <!-- Feather Icon -->
+    <script>
+        feather.replace()
+      </script>
 </body>
 
 </html>

@@ -161,7 +161,7 @@
                             <div class="inner">
                                 <div class="content">
                                     <span class="pre-title text-uppercase">BECOME A TOPPER</span>
-                                    <h4 class="title">CLASS 9TH</h4>
+                                    <a href="#ninth"><h4 class="title">CLASS 9TH</h4></a>
                                 </div>
                                 <div class="thumbnail">
                                     {% comment %} <img src="{% static 'assets/images/splash/topfeature/01.png' %}" alt="Image" width="128px"> {% endcomment %}
@@ -257,14 +257,14 @@
                                 <div class="rbt-swiper-pagination"></div>
                                 <div class="rbt-swiper-arrow rbt-arrow-left">
                                     <div class="custom-overfolow">
-                                        <i class="rbt-icon feather-arrow-left"></i>
-                                        <i class="rbt-icon-top feather-arrow-left"></i>
+                                        <i class="rbt-icon" data-feather="arrow-left"></i>
+                                        <i class="rbt-icon-top" data-feather="arrow-left"></i>
                                     </div>
                                 </div>
                                 <div class="rbt-swiper-arrow rbt-arrow-right">
                                     <div class="custom-overfolow">
-                                        <i class="rbt-icon feather-arrow-right"></i>
-                                        <i class="rbt-icon-top feather-arrow-right"></i>
+                                        <i class="rbt-icont" data-feather="arrow-right"></i>
+                                        <i class="rbt-icon-top" data-feather="arrow-right"></i>
                                     </div>
                                 </div>
                             </div>
@@ -273,7 +273,7 @@
                         <div class="col-lg-12 col-xl-6 col-12">
                             <div class="split-inner">
                                 <span class="rbt-badge-6 bg-primary-opacity">Excellent Notes</span>
-                                <a href="#ninth"><h4 class="title">CLASS 9TH</h4></a>
+                                <h4 class="title">CLASS 9TH</h4>
                                 <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium?</p>
 
                                 <h5 class="subtitle mb--20">Get Notes:</h5>
@@ -281,7 +281,7 @@
                                     <ul id="ninth_history" class="plan-offer-list rbt-list-primary-opacity">
                                         <li >History</li>
                                         {% for x,y in class_9.history %}
-                                        <li><i class="feather-check"></i>
+                                        <li><i data-feather="arrow-right"></i>
                                            <a href="{{ y }}">{{ x }}</a>
                                         </li>
                                         {% endfor %}
@@ -289,7 +289,7 @@
                                     <ul id="ninth_geography" class="plan-offer-list rbt-list-primary-opacity">
                                         <li >Geography</li>
                                         {% for x,y in class_9.geography %}
-                                        <li><i class="feather-check"></i>
+                                        <li><i data-feather="arrow-right"></i>
                                            <a href="{{ y }}">{{ x }}</a>
                                         </li>
                                         {% endfor %}
@@ -297,7 +297,7 @@
                                     <ul id="ninth_civics" class="plan-offer-list rbt-list-primary-opacity">
                                         <li >Civics</li>
                                         {% for x,y in class_9.civics %}
-                                        <li><i class="feather-check"></i>
+                                        <li><i data-feather="arrow-right"></i>
                                            <a href="{{ y }}">{{ x }}</a>
                                         </li>
                                         {% endfor %}
@@ -305,7 +305,7 @@
                                     <ul id="ninth_economics" class="plan-offer-list rbt-list-primary-opacity">
                                         <li>Economics</li>
                                         {% for x,y in class_9.economics %}
-                                        <li><i class="feather-check"></i>
+                                        <li><i data-feather="arrow-right"></i>
                                            <a href="{{ y }}">{{ x }}</a>
                                         </li>
                                         {% endfor %}
@@ -341,7 +341,7 @@
                                     <ul class="plan-offer-list rbt-list-primary-opacity">
                                         <li id="tenth_history">History</li>
                                         {% for x,y in class_10.history %}
-                                        <li><i class="feather-check"></i>
+                                        <li><i data-feather="arrow-right"></i>
                                            <a href="{{ y }}">{{ x }}</a>
                                         </li>
                                         {% endfor %}
@@ -349,7 +349,7 @@
                                     <ul class="plan-offer-list rbt-list-primary-opacity">
                                         <li id="tenth_geography">Geography</li>
                                         {% for x,y in class_10.geography %}
-                                        <li><i class="feather-check"></i>
+                                        <li><i data-feather="arrow-right"></i>
                                            <a href="{{ y }}">{{ x }}</a>
                                         </li>
                                         {% endfor %}
@@ -357,7 +357,7 @@
                                     <ul class="plan-offer-list rbt-list-primary-opacity">
                                         <li id="tenth_civics">Civics</li>
                                         {% for x,y in class_10.civics %}
-                                        <li><i class="feather-check"></i>
+                                        <li><i data-feather="arrow-right"></i>
                                            <a href="{{ y }}">{{ x }}</a>
                                         </li>
                                         {% endfor %}
@@ -365,7 +365,7 @@
                                     <ul class="plan-offer-list rbt-list-primary-opacity">
                                         <li id="tenth_economics">Economics</li>
                                         {% for x,y in class_10.economics %}
-                                        <li><i class="feather-check"></i>
+                                        <li><i data-feather="arrow-right"></i>
                                            <a href="{{ y }}">{{ x }}</a>
                                         </li>
                                         {% endfor %}
@@ -412,14 +412,14 @@
                                 <div class="rbt-swiper-pagination"></div>
                                 <div class="rbt-swiper-arrow rbt-arrow-right">
                                     <div class="custom-overfolow">
-                                        <i class="rbt-icon feather-arrow-right"></i>
-                                        <i class="rbt-icon-top feather-arrow-right"></i>
+                                        <i class="rbt-icon" data-feather="arrow-right"></i>
+                                        <i class="rbt-icon-top" data-feather="arrow-right"></i>
                                     </div>
                                 </div>
                                 <div class="rbt-swiper-arrow rbt-arrow-left">
                                     <div class="custom-overfolow">
-                                        <i class="rbt-icon feather-arrow-left"></i>
-                                        <i class="rbt-icon-top feather-arrow-left"></i>
+                                        <i class="rbt-icon" data-feather="arrow-left"></i>
+                                        <i class="rbt-icon-top" data-feather="arrow-left"></i>
                                     </div>
                                 </div>
 
