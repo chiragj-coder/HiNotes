@@ -22,10 +22,10 @@ def home(request):
     class_9_10 = {
         'class_9':
             {
-                # 'history':list(zip(get_chapters_name('class_9', 'history'), get_chapters_docs_path('class_9', 'history'))),
-                # 'geography':list(zip(get_chapters_name('class_9', 'geography'), get_chapters_docs_path('class_9', 'geography'))),
-                # 'civics':list(zip(get_chapters_name('class_9', 'civics'), get_chapters_docs_path('class_9', 'civics'))),
-                # 'economics':list(zip(get_chapters_name('class_9', 'economics'), get_chapters_docs_path('class_9', 'economics'))),
+                'history':list(zip(get_chapters_name('class_9', 'history'), get_chapters_docs_path('class_9', 'history'))),
+                'geography':list(zip(get_chapters_name('class_9', 'geography'), get_chapters_docs_path('class_9', 'geography'))),
+                'civics':list(zip(get_chapters_name('class_9', 'civics'), get_chapters_docs_path('class_9', 'civics'))),
+                'economics':list(zip(get_chapters_name('class_9', 'economics'), get_chapters_docs_path('class_9', 'economics'))),
             },
         'class_10':
             {
@@ -37,7 +37,7 @@ def home(request):
     }
 
     # return render(request,"debug.html", class_9_10)
-    return render(request,"home.html", class_9_10)
+    return render(request,"Home.html", class_9_10)
 
 def get_chapters_name(class_id, subject):
     chapters_id = list(database.child('class').child(class_id).child(subject).get().val())
