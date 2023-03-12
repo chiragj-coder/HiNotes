@@ -2,6 +2,7 @@ from django.shortcuts import render
 import pyrebase
 
 config={
+<<<<<<< HEAD
     "apiKey": "AIzaSyA4FIcyNcNjYP_Z8Ll4VyO4XAs23cVeL4E",
     "authDomain": "easenotes-cj.firebaseapp.com",
     "databaseURL": "https://easenotes-cj-default-rtdb.asia-southeast1.firebasedatabase.app/data",
@@ -10,6 +11,9 @@ config={
     "messagingSenderId": "741857872370",
     "appId": "1:741857872370:web:f269e26efdd448b911836b"
     
+=======
+
+>>>>>>> 1a234fe91317e37fa963925ef4bbdd1e70e55fe1
 }
 
 firebase=pyrebase.initialize_app(config)
