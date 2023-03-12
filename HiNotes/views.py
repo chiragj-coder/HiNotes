@@ -9,6 +9,7 @@ config={
     "storageBucket": "easenotes-cj.appspot.com",
     "messagingSenderId": "741857872370",
     "appId": "1:741857872370:web:f269e26efdd448b911836b"
+    
 }
 
 firebase=pyrebase.initialize_app(config)
