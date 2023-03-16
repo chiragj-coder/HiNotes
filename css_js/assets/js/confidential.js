@@ -1,6 +1,7 @@
 
     // Create an object to store usernames and passwords
     const users = {
+    'teacher':'iamteacher',
     '22632514': 'jyotsna124',
     '1000471118': 'kavish86',
     '1000481027': 'venu95',
