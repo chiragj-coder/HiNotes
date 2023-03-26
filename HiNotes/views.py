@@ -38,7 +38,7 @@ def home10(request):
 
 def home_special(request):
     # print(class_9_10_hidden)
-    return render(request, "Home_special.html", class_9_10_hidden)
+    return render(request, "Home_Special.html", class_9_10_hidden)
 
 
 # def get_chapters_name(class_id, subject):
