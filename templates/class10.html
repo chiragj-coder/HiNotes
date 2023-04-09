@@ -5,87 +5,105 @@
         <div class="rbt-splite-style">
             <div class="split-wrapper">
                 <div class="row g-0 align-items-center">
-                    <div class="col-lg-12 col-xl-6 col-12">
+                    <div class="col-lg-12 col-xl-8 col-12">
                         <div class="split-inner">
                             <span class="rbt-badge-6 bg-primary-opacity">Excellent Notes</span>
                             <h4 class="title">CLASS 10th</h4>
                             <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium?</p>
 
                             <h5 class="subtitle mb--20">Get Notes:</h5>
-                            <div class="plan-offer-list-wrapper">
-                                <ul class="plan-offer-list rbt-list-primary-opacity">
-                                    <li id="tenth_history">History</li>
-                                    {% for x,y in class_10.history %}
-                                    <li><i data-feather="arrow-right"></i>
-                                       <a href="{{ y }}">{{ x }}</a>
-                                    </li>
-                                    {% endfor %}
-                                </ul>
-                                <ul class="plan-offer-list rbt-list-primary-opacity">
-                                    <li id="tenth_geography">Geography</li>
-                                    {% for x,y in class_10.geography %}
-                                    <li><i data-feather="arrow-right"></i>
-                                       <a href="{{ y }}">{{ x }}</a>
-                                    </li>
-                                    {% endfor %}
-                                </ul>
-                                <ul class="plan-offer-list rbt-list-primary-opacity">
-                                    <li id="tenth_civics">Civics</li>
-                                    {% for x,y in class_10.civics %}
-                                    <li><i data-feather="arrow-right"></i>
-                                       <a href="{{ y }}">{{ x }}</a>
-                                    </li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
-                            <div class="plan-offer-list-wrapper">
-                                <ul class="plan-offer-list rbt-list-primary-opacity">
-                                    <li id="tenth_economics">Economics</li>
-                                    {% for x,y in class_10.economics %}
-                                    <li><i data-feather="arrow-right"></i>
-                                       <a href="{{ y }}">{{ x }}</a>
-                                    </li>
-                                    {% endfor %}
-                                </ul>
-                                <ul class="plan-offer-list rbt-list-primary-opacity">
-                                    <li id="tenth_economics">Social Science Test Series</li>
-                                    {% for x,y in class_10.social_science_test %}
-                                    <li><i data-feather="arrow-right"></i>
-                                       <a href="{{ y }}">{{ x }}</a>
-                                    </li>
-                                    {% endfor %}
-                                </ul>
-                                <ul class="plan-offer-list rbt-list-primary-opacity">
-                                    <li id="tenth_footprints_without_feet">Footprints Without Feet</li>
-                                    {% for x,y in class_10.eng_LFWF %}
-                                    <li><i data-feather="arrow-right"></i>
-                                       <a href="{{ y }}">{{ x }}</a>
-                                    </li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
-                            <div class="plan-offer-list-wrapper">
-                                <ul class="plan-offer-list rbt-list-primary-opacity">
-                                    <li id="tenth_first_flight">First Flight</li>
-                                    {% for x,y in class_10.eng_LFF %}
-                                    <li><i data-feather="arrow-right"></i>
-                                       <a href="{{ y }}">{{ x }}</a>
-                                    </li>
-                                    {% endfor %}
-                                </ul>
-                                <ul class="plan-offer-list rbt-list-primary-opacity">
-                                    <li id="tenth_science">Science</li>
-                                    {% for x,y in class_10.science %}
-                                    <li><i data-feather="arrow-right"></i>
-                                       <a href="{{ y }}">{{ x }}</a>
-                                    </li>
-                                    {% endfor %}
-                                </ul>
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-6 col-12 mt--30">
+                                    <div class="footer-widget">
+                                        <h5 class="ft-title">History</h5>
+                                        <ul class="ft-link">
+                                            {% for x,y in class_10.history %}
+                                            <li><i data-feather="arrow-right"></i>
+                                            <a href="{{ y }}">{{ x }}</a>
+                                            </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-6 col-12 mt--30">
+                                    <div class="footer-widget">
+                                        <h5 class="ft-title">Geography</h5>
+                                        <ul class="ft-link">
+                                            {% for x,y in class_10.geography %}
+                                            <li><i data-feather="arrow-right"></i>
+                                            <a href="{{ y }}">{{ x }}</a>
+                                            </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-6 col-12 mt--30">
+                                    <div class="footer-widget">
+                                        <h5 class="ft-title">Civics</h5>
+                                        <ul class="ft-link">
+                                            {% for x,y in class_10.civics %}
+                                            <li><i data-feather="arrow-right"></i>
+                                            <a href="{{ y }}">{{ x }}</a>
+                                            </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-6 col-12 mt--30">
+                                    <div class="footer-widget">
+                                        <h5 class="ft-title">Economics</h5>
+                                        <ul class="ft-link">
+                                            {% for x,y in class_10.economics %}
+                                            <li><i data-feather="arrow-right"></i>
+                                            <a href="{{ y }}">{{ x }}</a>
+                                            </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                                {% comment %} <div class="col-lg-6 col-md-4 col-sm-6 col-12 mt--30">
+                                    <div class="footer-widget">
+                                        <h5 class="ft-title">Social Science Test Series</h5>
+                                        <ul class="ft-link">
+                                                {% for x,y in class_10.social_science_test %}
+                                                <li><i data-feather="arrow-right"></i>
+                                                   <a href="{{ y }}">{{ x }}</a>
+                                                </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </ul>
+                                    </div>
+                                </div> {% endcomment %}
+
+                                <div class="col-lg-4 col-md-5 col-sm-6 col-12 mt--30">
+                                    <div class="footer-widget">
+                                        <h5 class="ft-title">Footprints Without Feet</h5>
+                                        <ul class="ft-link">
+                                        {% for x,y in class_10.eng_LFWF %}
+                                            <li>
+                                                <i data-feather="arrow-right"></i><a href="{{ y }}">{{ x }}</a>
+                                            </li>
+                                        {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-6 col-12 mt--30">
+                                    <div class="footer-widget">
+                                        <h5 class="ft-title">First Flight</h5>
+                                        <ul class="ft-link">
+                                        {% for x,y in class_10.eng_LFF %}
+                                            <li>
+                                                <i data-feather="arrow-right"></i><a href="{{ y }}">{{ x }}</a>
+                                            </li>
+                                        {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-12 col-xl-5 col-12">
+                    <div class="col-lg-12 col-xl-4 col-12">
                         <div class="swiper banner-splash-inner-layout-active rbt-arrow-between rbt-dot-bottom-center icon-bg-primary">
                             <div class="swiper-wrapper">
 
