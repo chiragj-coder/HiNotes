@@ -30,7 +30,8 @@ from managenotes.models import Class
 
 def home(request):
     classes = Class.objects.prefetch_related('subjects__notes').all()
-    context = {'classes': classes,'class_names_int': [7,8,9,10,11,12],'class_names': ['7','8','9','10','11','12'],}
+    # context = {'classes': classes,'class_names_int': [7,8,9,10,11,12],'class_names': ['7','8','9','10','11','12'],}
+    context = {'classes': classes[0:3],'class_names_int': [8,9,10],'class_names': ['8','9','10']}
     return render(request, "index.html", context)
 
 def home_n(request, class_name):
