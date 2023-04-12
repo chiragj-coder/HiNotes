@@ -12,26 +12,22 @@
                 </div>
             </div>
             <div class="row g-5">
-                {% comment %}  col-lg-3 when 4 boxes are there {% endcomment %}
                 <!-- Start Top Feature  -->
+                {% for class in classes %}
                 <div class="col-lg-4 col-md-6 col-12" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
                     <div class="top-features-box h-100 text-center bg-gradient-15">
                         <div class="inner">
                             <div class="content">
                                 <span class="pre-title text-uppercase">BECOME A TOPPER</span>
-                                <a href="#ninth"><h4 class="title">CLASS 9TH</h4></a>
+                                <a href="#ninth"><h4 class="title">CLASS {{ class }}TH</h4></a>
                             </div>
-                            {% comment %} <div class="thumbnail">
+                            <div class="thumbnail">
                                 <img src="{% static 'assets/images/splash/topfeature/01.png' %}" alt="Image" width="128px">
-                            </div> {% endcomment %}
+                            </div> 
                             <div class="rbt-badge-group">
-                                <a href="#eigth_history"><span class="rbt-badge">HISTORY</span></a>
-                                <a href="#eigth_geography"><span class="rbt-badge">GEOGRAPHY</span></a>
-                                <a href="#eigth_civics"><span class="rbt-badge">CIVICS</span></a>
-                                {% comment %} <a href="#eigth_economics"><span class="rbt-badge">ECONOMICS</span></a>
-                                <a href="#eigth_science"><span class="rbt-badge">SCIENCE</span></a>
-                                <a href="#eigth_beehive"><span class="rbt-badge">BEEHIVE</span></a>
-                                <a href="#eigth_moments"><span class="rbt-badge">MOMENTS</span></a> {% endcomment %}
+                                {% for subject in class.subjects.all %}
+                                <a href="#{{ subject }}_{{ class }}"><span class="rbt-badge">{{ subject }}</span></a>
+                                {% endfor %}
                             </div>
                         </div>
                         <div class="shape-image">
@@ -40,64 +36,7 @@
                     </div>
                 </div>
                 <!-- End Top Feature  -->
-
-                <!-- Start Top Feature  -->
-                <div class="col-lg-4 col-md-6 col-12" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
-                    <div class="top-features-box h-100 text-center bg-gradient-15">
-                        <div class="inner">
-                            <div class="content">
-                                <span class="pre-title text-uppercase">BECOME A TOPPER</span>
-                                <a href="#ninth"><h4 class="title">CLASS 8TH</h4></a>
-                            </div>
-                            {% comment %} <div class="thumbnail">
-                                <img src="{% static 'assets/images/splash/topfeature/01.png' %}" alt="Image" width="128px">
-                            </div> {% endcomment %}
-                            <div class="rbt-badge-group">
-                                <a href="#ninth_history"><span class="rbt-badge">HISTORY</span></a>
-                                <a href="#ninth_geography"><span class="rbt-badge">GEOGRAPHY</span></a>
-                                <a href="#ninth_civics"><span class="rbt-badge">CIVICS</span></a>
-                                <a href="#ninth_economics"><span class="rbt-badge">ECONOMICS</span></a>
-                                <a href="#ninth_science"><span class="rbt-badge">SCIENCE</span></a>
-                                <a href="#ninth_beehive"><span class="rbt-badge">BEEHIVE</span></a>
-                                <a href="#ninth_moments"><span class="rbt-badge">MOMENTS</span></a>
-                            </div>
-                        </div>
-                        <div class="shape-image">
-                            <img src="{% static 'assets/images/splash/icons/sun-shadow-right.png' %}" alt="Shape Images">
-                        </div>
-                    </div>
-                </div>
-                <!-- End Top Feature  -->
-
-                <!-- Start Top Feature  -->
-                <div class="col-lg-4 col-md-6 col-12" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
-                    <div class="top-features-box h-100 text-center bg-gradient-15">
-                        <div class="inner">
-                            <div class="content">
-                                <span class="pre-title text-uppercase">BECOME A TOPPER</span>
-                                <a href="#tenth"><h4 class="title">CLASS 10TH</h4></a>
-                            </div>
-                            {% comment %} <div class="thumbnail">
-                                <img src="{% static 'assets/images/splash/topfeature/02.SVG' %}" alt="Image">
-                            </div> {% endcomment %}
-                            <div class="rbt-badge-group">
-                                <a href="#tenth_history"><span class="rbt-badge">HISTORY</span></a>
-                                <a href="#tenth_geography"><span class="rbt-badge">GEOGRAPHY</span></a>
-                                <a href="#tenth_civics"><span class="rbt-badge">CIVICS</span></a>
-                                <a href="#tenth_economics"><span class="rbt-badge">ECONOMICS</span></a>
-                                <a href="#tenth_science"><span class="rbt-badge">SCIENCE</span></a>
-                                <a href="#tenth_first_flight"><span class="rbt-badge">FIRST FLIGHT</span></a>
-                                <a href="#tenth_footprints_without_feet"><span class="rbt-badge">FOOTPRINTS WITHOUT FEET</span></a>
-                            </div>
-                        </div>
-                        <div class="shape-image">
-                            <img src="{% static 'assets/images/splash/icons/sun-shadow-right.png' %}" alt="Shape Images">
-                        </div>
-                    </div>
-                </div>
-                <!-- End Top Feature  -->
-
-
+                {% endfor %}
             </div>
         </div>
     </div>

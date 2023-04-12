@@ -1,6 +1,6 @@
 import csv
 
-from django.shortcuts import render
+from django.shortcuts import render,HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from .models import Notes, Class, Subject
 
@@ -23,3 +23,25 @@ def upload_csv(request):
             Notes.objects.create(chapter_number=chapter_number, chapter_name=chapter_name, file=file, subject=subject_obj)
 
     return render(request, 'upload_csv.html')
+
+def get_csv(request):
+    from django.db.models import Q
+
+    class_subjects = Subject.objects.all().select_related('class_field')
+
+    notes = Notes.objects.filter(
+        subject__in=class_subjects
+    ).select_related('subject__class_field')
+
+    data = []
+
+    for note in notes:
+        class_name = note.subject.class_field.name
+        subject_name = note.subject.name
+        chapter_number = note.chapter_number
+        chapter_name = note.chapter_name
+        file_url = note.file.url
+        data.append(f'"{class_name}","{subject_name}","{chapter_number}","{chapter_name}","{file_url}"')
+    print(str("\n".join(data)))
+    return HttpResponse(request, "DONE")
+    

@@ -8,14 +8,18 @@
 </head>
 <body>
     <a href="static/docs/class_10/civics/2.pdf"><h1>HELLO</h1></a>
-    <li>Civics</li>
     
-                                        {% for x,y in class_10.civics %}
-                                        {{ class_10.civics }}
-                                        <li><i class="feather-check"></i>
-
-                                           <a href="{{ y }}">{{ x }}</a>
-                                        </li>
-                                        {% endfor %}
+    {% for class_obj in classes %}
+    <h1>{{ class_obj.name }}</h1>
+    {% for subject_obj in class_obj.subjects.all %}
+      <h2>{{ subject_obj.name }}</h2>
+      {% for note_obj in subject_obj.notes.all %}
+        <div>
+          <p><a href="{{ note_obj.file.url }}">Chapter {{ note_obj.chapter_number }}: {{ note_obj.chapter_name }}</a></p>
+          
+        </div>
+      {% endfor %}
+    {% endfor %}
+  {% endfor %}          
 </body>
 </html>

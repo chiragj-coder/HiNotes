@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block webpage_title %}Home{% endblock %}
+
+{% block class_animation_info %}
+    {% for class_name in class_names %}
+    {% if forloop.counter == 1 %}
+        <b class="is-visible theme-gradient">{{ class_name }}th</b>
+        {% endif %}
+        <b class="is-hidden theme-gradient">{{ class_name }}th</b>
+    {% endfor %}
+{% endblock class_animation_info %}
+
+
+
+{% block main_content %}
+{% include 'select_class.html' %}
+{% for class_name in class_names %}
+    {% if class_name|add:0|divisibleby:2 %}
+    {% include 'class_n_left.html' with class_name=class_name %}
+    {% else %}
+    {% include 'class_n_right.html' with class_name=class_name %}
+    {% endif %}
+{% endfor %}
+
+
+{% endblock main_content %}

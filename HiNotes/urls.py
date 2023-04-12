@@ -19,10 +19,10 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('8/', views.home8),
-    path('9/', views.home9),
-    path('10/', views.home10),
+    # path('8/', views.home8),
+    # path('9/', views.home9),
+    # path('10/', views.home10),
     path('', views.home),
-    path('special/', views.home_special),
+    # path('special/', views.home_special),
     path('mn/', include('managenotes.urls')),
 ]

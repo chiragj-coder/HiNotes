@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block webpage_title %}Class {{ class_name }}th{% endblock %}
+
+{% block class_animation_info %}<b class="is-visible theme-gradient">{{ class_name }}th</b>{% endblock class_animation_info %}
+{% block main_content %}
+{% include 'class_n_left.html' with class_name=class_name %}
+{% endblock main_content %}
