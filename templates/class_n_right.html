@@ -23,7 +23,7 @@
                                             <h5 class="ft-title">{{ subject_obj.name }}</h5>
                                             <ul class="ft-link">
                                                 {% for note_obj in subject_obj.notes.all %}
-                                                    <li><i data-feather="arrow-right"></i><a href="{{ note_obj.file.url }}">Ch {{ note_obj.chapter_number }}: {{ note_obj.chapter_name }}</a></li>
+                                                <li><i data-feather="arrow-right"></i><a href="{% static note_obj.file.url %}">Ch {{ note_obj.chapter_number }}: {{ note_obj.chapter_name }}</a></li>
                                                 {% endfor %}
                                             </ul>
                                         </div>
