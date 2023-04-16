@@ -4,7 +4,7 @@
 {% block webpage_title %}Home{% endblock %}
 
 {% block class_animation_info %}
-    {% for class_name in class_names %}
+    {% for class_name,class_name_word in class_names %}
     {% if forloop.counter == 1 %}
         <b class="is-visible theme-gradient">{{ class_name }}th</b>
         {% endif %}
@@ -15,12 +15,12 @@
 
 
 {% block main_content %}
-{% include 'select_class.html' %}
-{% for class_name in class_names %}
+{% include 'select_class.html' with class_name_=class_name class_name_word_=class_name_word %}
+{% for class_name,class_name_word in class_names %}
     {% if class_name|add:0|divisibleby:2 %}
-    {% include 'class_n_left.html' with class_name=class_name %}
+    {% include 'class_n_left.html' with class_name=class_name class_name_word=class_name_word %}
     {% else %}
-    {% include 'class_n_right.html' with class_name=class_name %}
+    {% include 'class_n_right.html' with class_name=class_name class_name_word=class_name_word %}
     {% endif %}
 {% endfor %}
 

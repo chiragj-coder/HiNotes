@@ -37,7 +37,7 @@
 <body class="rbt-header-sticky">
 
     <!-- Start Header Area  -->
-    <header class="rbt-header rbt-header-10">
+    <header class="rbt-header rbt-header-10 nav">
         <div class="rbt-sticky-placeholder"></div>
         <div class="rbt-header-wrapper header-space-betwween header-transparent header-sticky">
             <div class="container-fluid">
@@ -83,7 +83,7 @@
     <!-- End Header Area  -->
 
     <!-- Mobile Menu Section -->
-    <div class="popup-mobile-menu">
+    <div class="popup-mobile-menu nav">
         <div class="inner-wrapper">
             <div class="inner-top">
                 <div class="content">
@@ -349,6 +349,20 @@
     <script>
         feather.replace()
       </script>
+      <!-- Scrolling NavBar Hiding Content Issue Fixer -->
+      <script>
+		// Get the height of the navigation bar
+		// var navHeight1 = document.getElementsByClassName('nav')[0].offsetHeight;
+		// var navHeight2 = document.getElementsByClassName('nav')[1].offsetHeight;
+        function getGreatestNumber(a, b) {if (a > b) {return a;} else {return b;}}
+		// Adjust the padding of the content based on the height of the navigation bar
+		{% comment %} document.getElementById('content').style.scrollMarginTop = getGreatestNumber(document.getElementsByClassName('nav')[0].offsetHeight, navHeight2 = document.getElementsByClassName('nav')[1].offsetHeight) + 'px' {% endcomment %}
+
+        const navElements = document.getElementsByClassName('nav');
+        const contentElement = document.getElementsByClassName('subjectcontent');
+        
+        contentElement.style.scrollMarginTop = 5*(getGreatestNumber(document.getElementsByClassName('nav')[0].offsetHeight, navHeight2 = document.getElementsByClassName('nav')[1].offsetHeight)) + 'px';
+    </script>
 </body>
 
 </html>

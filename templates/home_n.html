@@ -5,5 +5,6 @@
 
 {% block class_animation_info %}<b class="is-visible theme-gradient">{{ class_name }}th</b>{% endblock class_animation_info %}
 {% block main_content %}
-{% include 'class_n_left.html' with class_name=class_name %}
+{% include 'class_n_left.html' with class_name=class_name class_name_word=class_name_word %}
+{{class_name_word}}
 {% endblock main_content %}

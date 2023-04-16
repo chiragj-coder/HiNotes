@@ -129,6 +129,4 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #ADDED BY CJ
-STATICFILES_DIRS = [
-    BASE_DIR + '/css_js', BASE_DIR + '/notes', BASE_DIR + '/admin'
-]
+STATICFILES_DIRS = [BASE_DIR + '/css_js', BASE_DIR + '/notes', BASE_DIR + '/admin']

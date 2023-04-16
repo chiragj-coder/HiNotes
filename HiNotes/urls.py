@@ -23,8 +23,8 @@ urlpatterns = [
     # path('9/', views.home9),
     # path('10/', views.home10),
     path('', views.home),
-    path('10', views.home),
     path('9', views.home),
+    path('10', views.home),
     # path('special/', views.home_special),
     path('mn/', include('managenotes.urls')),
 ]

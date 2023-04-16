@@ -19,14 +19,16 @@
                         <div class="inner">
                             <div class="content">
                                 <span class="pre-title text-uppercase">BECOME A TOPPER</span>
-                                <a href="#ninth"><h4 class="title">CLASS {{ class }}TH</h4></a>
+                                <a href="#ninth"><h4 class="title">{{ class }}</h4></a>
                             </div>
                             <div class="thumbnail">
                                 <img src="{% static 'assets/images/splash/topfeature/01.png' %}" alt="Image" width="128px">
                             </div> 
                             <div class="rbt-badge-group">
-                                {% for subject in class.subjects.all %}
-                                <a href="#{{ subject }}_{{ class }}"><span class="rbt-badge">{{ subject }}</span></a>
+                                {% for subject_obj in class.subjects.all %}
+
+                                {% comment %} {{ class_name_word }}_{{ subject_obj.name }} {% endcomment %}
+                                <a href="#{{ class.name_word }}_{{ subject_obj.name }}"><span class="rbt-badge">{{ subject_obj.name }}</span></a>
                                 {% endfor %}
                             </div>
                         </div>

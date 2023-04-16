@@ -71,7 +71,7 @@
                                 
                                 {% if class_obj.name == class_name %}
                                 {% for subject_obj in class_obj.subjects.all %}
-                                <div class="col-lg-4 col-md-4 col-sm-6 col-12 mt--30">
+                                <div class="subjectcontent col-lg-4 col-md-4 col-sm-6 col-12 mt--30" id="{{ class_name_word }}_{{ subject_obj.name }}">
                                     <div class="footer-widget">
                                             <h5 class="ft-title">{{ subject_obj.name }}</h5>
                                             <ul class="ft-link">

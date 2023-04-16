@@ -245,6 +245,7 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  scroll-margin-top: 200px;
 }
 
 article,
@@ -611,7 +612,6 @@ html {
 body {
   font-size: 18px;
   line-height: 1.5;
-  padding-top: 5em;
   font-family: var(--font-primary);
   color: var(--color-body);
   font-weight: 400;
@@ -28575,3 +28575,7 @@ Course Sidebar
   }
 }
 /*# sourceMappingURL=../maps/style.css.map */
+
+/* #my-id-link {
+  scroll-margin-top: 60px;
+} */
