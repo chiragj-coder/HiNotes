@@ -4,23 +4,24 @@
 {% block webpage_title %}Home{% endblock %}
 
 {% block class_animation_info %}
-    {% for class_name,class_name_word in class_names %}
+    {% for class in classes %}
     {% if forloop.counter == 1 %}
-        <b class="is-visible theme-gradient">{{ class_name }}th</b>
-        {% endif %}
-        <b class="is-hidden theme-gradient">{{ class_name }}th</b>
+        <b class="is-visible theme-gradient">{{ class.name }}th</b>
+    {% else %}
+        <b class="is-hidden theme-gradient">{{ class.name }}th</b>
+    {% endif %}
     {% endfor %}
 {% endblock class_animation_info %}
 
 
 
 {% block main_content %}
-{% include 'select_class.html' with class_name_=class_name class_name_word_=class_name_word %}
-{% for class_name,class_name_word in class_names %}
-    {% if class_name|add:0|divisibleby:2 %}
-    {% include 'class_n_left.html' with class_name=class_name class_name_word=class_name_word %}
+{% include 'select_class.html' with class_name_=class.name class_name_word_=class.name_word %}
+{% for class in classes %}
+    {% if class.name|add:0|divisibleby:2 %}
+    {% include 'class_n_left.html' with class_name=class.name class_name_word=class.name_word %}
     {% else %}
-    {% include 'class_n_right.html' with class_name=class_name class_name_word=class_name_word %}
+    {% include 'class_n_right.html' with class_name=class.name class_name_word=class.name_word %}
     {% endif %}
 {% endfor %}
 

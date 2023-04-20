@@ -51,18 +51,23 @@
                             </div>
                         </div>
                     </div>
-                    {% comment %} <div class="rbt-main-navigation d-none d-xl-block">
+                    <div class="rbt-main-navigation d-none d-xl-block">
                         <nav class="mainmenu-nav">
                             <ul class="mainmenu">
                                 <li class="with-megamenu has-menu-child-item position-static">
-                                    <a href="#">Home <i class="feather-chevron-down" data-feather="chevron-down"></i></a>
+                                    <a href="#">HOME</a>
                                 </li>
+                                {% for class in classes %}
+                                <li class="with-megamenu has-menu-child-item position-static">
+                                    <a href="#{{ class.name_word }}">CLASS {{class.name}}TH</a>
+                                </li>
+                                {% endfor %}
                             </ul>
                         </nav>
-                    </div> {% endcomment %}
+                    </div>
                     <div class="header-right">
                         <div class="rbt-btn-wrapper d-none d-xl-block">
-                            <a class="rbt-btn rbt-marquee-btn marquee-auto btn-border-gradient radius-round btn-sm hover-transform-none" href="#get_notes">
+                            <a class="rbt-btn rbt-marquee-btn marquee-auto btn-border-gradient radius-round btn-sm hover-transform-none" href="#select_class">
                                 <span data-text="Get Now">Get Notes</span>
                             </a>
                         </div>
@@ -100,25 +105,30 @@
                 </p>
                 <ul class="navbar-top-left rbt-information-list justify-content-start">
                     <li>
-                        <a href="mailto:hello@example.com"><i class="feather-mail" data-feather="mail"></i>XXXXXXXXXX@XXX.com</a>
+                        <a href="mailto:coder2543j@gmail.com"><i class="feather-mail" data-feather="mail"></i>coder2543j@gmail.com</a>
                     </li>
                     <li>
-                        <a href="#"><i class="feather-phone" data-feather="phone"></i>+XX XXXXX XXXXX</a>
+                        <a href="#"><i class="feather-phone" data-feather="phone"></i>+91 9968551561</a>
                     </li>
                 </ul>
             </div>
 
             <nav class="mainmenu-nav">
                 <ul class="mainmenu">
-                    <li class="with-megamenu has-menu-child-item position-static">
-                        <a href="#">Home <i class="feather-chevron-down" data-feather="chevron-down"></i></a>
+                    <li class="position-static">
+                        <a href="#">HOME</a>
                     </li>
+                    {% for class in classes %}
+                    <li class="position-static">
+                        <a href="#{{ class.name_word }}">CLASS {{class.name}}TH</a>
+                    </li>
+                    {% endfor %}
                 </ul>
             </nav>
 
             <div class="mobile-menu-bottom">
                 <div class="rbt-btn-wrapper mb--20">
-                    <a class="rbt-btn btn-border-gradient radius-round btn-sm hover-transform-none w-100 justify-content-center text-center" href="#">
+                    <a class="rbt-btn btn-border-gradient radius-round btn-sm hover-transform-none w-100 justify-content-center text-center" href="#select_class">
                         <span>Get Notes</span>
                     </a>
                 </div>
@@ -126,20 +136,8 @@
                 <div class="social-share-wrapper">
                     <span class="rbt-short-title d-block">Find Me</span>
                     <ul class="social-icon social-default transparent-with-border justify-content-start mt--20">
-                        <li><a href="https://www.facebook.com/">
-                                <i class="feather-facebook" data-feather="facebook"></i>
-                            </a>
-                        </li>
-                        <li><a href="https://www.twitter.com">
-                                <i class="feather-twitter" data-feather="twitter"></i>
-                            </a>
-                        </li>
-                        <li><a href="https://www.instagram.com/">
-                                <i class="feather-instagram" data-feather="instagram"></i>
-                            </a>
-                        </li>
-                        <li><a href="https://www.linkdin.com/">
-                                <i class="feather-linkedin" data-feather="linkedin"></i>
+                        <li><a href="https://chiragj-coder.github.io/">
+                                <i class="feather-github" data-feather="github"></i>
                             </a>
                         </li>
                     </ul>
@@ -346,22 +344,22 @@
     <script src="{% static 'assets/js/main.js' %}"></script>
 
     <!-- Feather Icon -->
-    <script>
-        feather.replace()
-      </script>
+    <script>feather.replace()</script>
       <!-- Scrolling NavBar Hiding Content Issue Fixer -->
       <script>
-		// Get the height of the navigation bar
-		// var navHeight1 = document.getElementsByClassName('nav')[0].offsetHeight;
-		// var navHeight2 = document.getElementsByClassName('nav')[1].offsetHeight;
-        function getGreatestNumber(a, b) {if (a > b) {return a;} else {return b;}}
-		// Adjust the padding of the content based on the height of the navigation bar
-		{% comment %} document.getElementById('content').style.scrollMarginTop = getGreatestNumber(document.getElementsByClassName('nav')[0].offsetHeight, navHeight2 = document.getElementsByClassName('nav')[1].offsetHeight) + 'px' {% endcomment %}
-
+        {% comment %} function getGreatestNumber(a, b) {if (a > b) {return a;} else {return b;}}
         const navElements = document.getElementsByClassName('nav');
-        const contentElement = document.getElementsByClassName('subjectcontent');
-        
-        contentElement.style.scrollMarginTop = 5*(getGreatestNumber(document.getElementsByClassName('nav')[0].offsetHeight, navHeight2 = document.getElementsByClassName('nav')[1].offsetHeight)) + 'px';
+        const contentElements = document.getElementsByClassName('subjectcontent');
+        const greatestNavHeight = getGreatestNumber(navElements[0].offsetHeight, navElements[1].offsetHeight);
+
+        for (let i = 0; i < contentElements.length; i++) {
+            const contentElement = contentElements[i];
+            if (contentElement) {
+                contentElement.style.scrollMarginTop = greatestNavHeight + 'px';
+            }else {
+                console.log('Element not found');
+              }
+          } {% endcomment %}
     </script>
 </body>
 

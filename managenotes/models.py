@@ -5,7 +5,7 @@ from django.db import models
 class Class(models.Model):
     name = models.CharField(max_length=4)
     name_word = models.CharField(max_length=32, default="")
-    def __str__(self):return f"CLASS {self.name}th"
+    def __str__(self):return f"Class {self.name}th"
 
 class Subject(models.Model):
     name = models.CharField(max_length=32)
