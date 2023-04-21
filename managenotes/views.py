@@ -1,7 +1,12 @@
 import csv
 
 from django.shortcuts import render,HttpResponse
+
 from django.views.decorators.csrf import csrf_exempt
+
+import urllib.parse
+from django.utils.safestring import mark_safe
+
 from .models import Notes, Class, Subject
 
 @csrf_exempt
@@ -40,8 +45,8 @@ def get_csv(request):
         subject_name = note.subject.name
         chapter_number = note.chapter_number
         chapter_name = note.chapter_name
-        file_url = note.file.url
+        file_url = mark_safe(urllib.parse.unquote(note.file.url))
         data.append(f'"{class_name}","{subject_name}","{chapter_number}","{chapter_name}","{file_url}"')
-    print(str("\n".join(data)))
-    return HttpResponse(request, "DONE")
+    db = str("<br>".join(data))
+    return render(request, "display_db.html", {'db':db}, content_type='text/html; charset=utf-8')
     
