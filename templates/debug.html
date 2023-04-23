@@ -4,22 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>DEBUG</title>
 </head>
 <body>
-    <a href="static/docs/class_10/civics/2.pdf"><h1>HELLO</h1></a>
-    
-    {% for class_obj in classes %}
-    <h1>{{ class_obj.name }}</h1>
-    {% for subject_obj in class_obj.subjects.all %}
-      <h2>{{ subject_obj.name }}</h2>
-      {% for note_obj in subject_obj.notes.all %}
-        <div>
-          <p><a href="{{ note_obj.file.url }}">Chapter {{ note_obj.chapter_number }}: {{ note_obj.chapter_name }}</a></p>
-          
-        </div>
-      {% endfor %}
-    {% endfor %}
-  {% endfor %}          
+    <h1>HELLO</h1> 
 </body>
 </html>

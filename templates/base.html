@@ -57,10 +57,12 @@
                                 <li class="with-megamenu has-menu-child-item position-static">
                                     <a href="#">HOME</a>
                                 </li>
-                                {% for class in classes %}
-                                <li class="with-megamenu has-menu-child-item position-static">
-                                    <a href="#{{ class.name_word }}">CLASS {{class.name}}TH</a>
-                                </li>
+                                {% for class_obj in classes %}
+                                {% if not class_obj.is_hidden %}
+                                    <li class="with-megamenu has-menu-child-item position-static">
+                                        <a href="#{{ class_obj.name_word }}">CLASS {{class_obj.name}}TH</a>
+                                    </li>
+                                {% endif %}
                                 {% endfor %}
                             </ul>
                         </nav>
@@ -118,10 +120,12 @@
                     <li class="position-static">
                         <a href="#">HOME</a>
                     </li>
-                    {% for class in classes %}
-                    <li class="position-static">
-                        <a href="#{{ class.name_word }}">CLASS {{class.name}}TH</a>
-                    </li>
+                    {% for class_obj in classes %}
+                    {% if not class_obj.is_hidden %}
+                        <li class="position-static">
+                            <a href="#{{ class_obj.name_word }}">CLASS {{class_obj.name}}TH</a>
+                        </li>
+                        {% endif %}
                     {% endfor %}
                 </ul>
             </nav>

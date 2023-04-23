@@ -2,99 +2,51 @@
 {% load custom_filters %}
 
 <!-- Start Notes Presentation Area  -->
-<div class="rbt-inner-page-layout-area  bg-color-white rbt-section-gap rbt-shape-bg-area top-circle-shape-top" id="{{ class_name_word }}">
-    <div class="wrapper position-relative overflow-hidden">
-        <div class="rbt-splite-style">
-            <div class="split-wrapper">
-                <div class="row g-0 align-items-center">
-                    <div class="col-lg-12 col-xl-12 col-12">
-                        <div class="split-inner">
-                            <span class="rbt-badge-6 bg-primary-opacity">Excellent Notes</span>
-                            <h4 class="title" >CLASS11 {{class_name}}th</h4>
-                            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium?</p>
-
-                            <h5 class="subtitle mb--20">Get Notes:</h5>
-                            <div class="row">
-                                {% for class_obj in classes %}
-                                
-                                {% if class_obj.name == class_name %}
-                                {% for subject_obj in class_obj.subjects.all %}
-                                <div class="subjectcontent col-lg-4 col-md-4 col-sm-6 col-12 mt--30" id="{{ class_name_word }}_{{ subject_obj.name }}">
-                                    <div class="footer-widget">
-                                            <h5 class="ft-title">{{ subject_obj.name }}</h5>
-                                            <ul class="ft-link">
-                                                {% for note_obj in subject_obj.notes.all %}
-                                                <li><i data-feather="arrow-right"></i><a href="{{ note_obj.file.url|urldecode }}">Ch {{ note_obj.chapter_number }}: {{ note_obj.chapter_name }}</a></li>
-                                                {% endfor %}
-                                            </ul>
+{% for class_obj in classes %}
+    {% if not class_obj.is_hidden %}
+        {% if class_obj.name == class_name %}
+            <div class="rbt-inner-page-layout-area bg-color-white rbt-section-gap rbt-shape-bg-area top-circle-shape-top" id="{{ class_name_word }}">
+                <div class="wrapper position-relative overflow-hidden">
+                    <div class="rbt-splite-style">
+                        <div class="split-wrapper">
+                            <div class="row g-0 align-items-center">
+                                <div class="col-lg-12 col-xl-12 col-12">
+                                    <div class="split-inner">
+                                        <span class="rbt-badge-6 bg-primary-opacity">Excellent Notes</span>
+                                        <h4 class="title">CLASS {{class_name}}TH</h4>
+                                        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium?</p>
+                                        
+                                        <h5 class="subtitle mb--20">Get Notes:</h5>
+                                        <div class="row">
+                                            {% for subject_obj in class_obj.subjects.all %}
+                                                {% if not subject_obj.is_hidden %}
+                                                    <div class="subjectcontent col-lg-4 col-md-4 col-sm-6 col-12 mt--30" id="{{ class_name_word }}_{{ subject_obj.name }}">
+                                                        <div class="footer-widget">
+                                                            <h5 class="ft-title">{{ subject_obj.name }}</h5>
+                                                            <ul class="ft-link">
+                                                                {% for note_obj in subject_obj.notes.all %}
+                                                                    {% if not note_obj.is_hidden %}
+                                                                        <li><i data-feather="arrow-right"></i><a href="{{ note_obj.file.url|urldecode }}">Ch {{ note_obj.chapter_number }}: {{ note_obj.chapter_name }}</a></li>
+                                                                    {% endif %}
+                                                                {% endfor %}
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                {% endif %}
+                                            {% endfor %}
                                         </div>
                                     </div>
-                                    {% endfor %}
-                                {% endif %}
-                                {% endfor %}
+                                </div>
                             </div>
                         </div>
                     </div>
-
-                    {% comment %} <div class="col-lg-12 col-xl-4 col-12">
-                        <div class="swiper banner-splash-inner-layout-active rbt-arrow-between rbt-dot-bottom-center icon-bg-primary">
-                            <div class="swiper-wrapper">
-
-                               <!-- Start Single Slider  -->
-                               <div class="swiper-slide">
-                                <div class="single-slide">
-                                    <div class="rbt-splash-inner-layout-inner">
-                                        <div class="thumbnail image-left-content">
-                                            <img src="{% static 'assets/images/splash/innerlayout/course-layout-01.png' %}" alt="split Images" width="20px">
-                                        </div>
-                                        <div class="content text-center">
-                                            <h4 class="title">HISTORY</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Single Slider  -->
-
-                            <!-- Start Single Slider  -->
-                            <div class="swiper-slide">
-                                <div class="single-slide">
-                                    <div class="rbt-splash-inner-layout-inner">
-                                        <div class="thumbnail image-left-content">
-                                            <img src="{% static 'assets/images/splash/innerlayout/course-layout-02.png' %}" alt="split Images">
-                                        </div>
-                                        <div class="content text-center">
-                                            <h4 class="title">GEOGRAPHY</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Single Slider  -->
-
-                            </div>
-                            <div class="rbt-swiper-pagination"></div>
-                            <div class="rbt-swiper-arrow rbt-arrow-right">
-                                <div class="custom-overfolow">
-                                    <i class="rbt-icon" data-feather="arrow-right"></i>
-                                    <i class="rbt-icon-top" data-feather="arrow-right"></i>
-                                </div>
-                            </div>
-                            <div class="rbt-swiper-arrow rbt-arrow-left">
-                                <div class="custom-overfolow">
-                                    <i class="rbt-icon" data-feather="arrow-left"></i>
-                                    <i class="rbt-icon-top" data-feather="arrow-left"></i>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div> {% endcomment %}
-
+                    <div class="top-circle-shape"></div>
+                </div>
+                <div class="rbt-shape-bg">
+                    <img src="{% static 'assets/images/splash/bg/left-right-line-small.svg' %}" alt="Shape Images">
                 </div>
             </div>
-        </div>
-        <div class="top-circle-shape"></div>
-    </div>
-    <div class="rbt-shape-bg">
-        <img src="{% static 'assets/images/splash/bg/left-right-line-small.svg' %}" alt="Shape Images">
-    </div>
-</div>
+        {% endif %}
+    {% endif %}
+{% endfor %}
 <!-- End Course Presentation Area  -->

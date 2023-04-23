@@ -4,12 +4,14 @@
 {% block webpage_title %}Home{% endblock %}
 
 {% block class_animation_info %}
-    {% for class in classes %}
-    {% if forloop.counter == 1 %}
-        <b class="is-visible theme-gradient">{{ class.name }}th</b>
-    {% else %}
-        <b class="is-hidden theme-gradient">{{ class.name }}th</b>
-    {% endif %}
+    {% for class_obj in classes %}
+        {% if not class_obj.is_hidden %}
+            {% if forloop.counter == 1 %}
+                <b class="is-visible theme-gradient">{{ class_obj.name }}th</b>
+            {% else %}
+                <b class="is-hidden theme-gradient">{{ class_obj.name }}th</b>
+            {% endif %}
+        {% endif %}
     {% endfor %}
 {% endblock class_animation_info %}
 
