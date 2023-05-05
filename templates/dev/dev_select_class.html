@@ -13,21 +13,23 @@
             </div>
             <div class="row g-5">
                 <!-- Start Top Feature  -->
-                {% for class_obj in classes %}
-                {% if not class_obj.is_hidden %}
+                {% for class in classes %}
+                {% if not class.is_hidden %}
                 <div class="col-lg-4 col-md-6 col-12" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
                     <div class="top-features-box h-100 text-center bg-gradient-17">
                         <div class="inner">
                             <div class="content">
                                 <span class="pre-title text-uppercase">BECOME A TOPPER</span>
-                                <a href="#{{ class_obj.name_word }}"><h4 class="title">CLASS {{class_obj.name}}TH</h4></a>
+                                <a href="#{{ class.name_word }}"><h4 class="title">CLASS {{class.name}}TH</h4></a>
                             </div>
                             {% comment %} <div class="thumbnail">
                                 <img src="{% static 'assets/images/splash/topfeature/01.png' %}" alt="Image" width="128px">
                             </div>  {% endcomment %}
                             <div class="rbt-badge-group">
-                                {% for subject_obj in class_obj.subjects.all %}
-                                <a href="#{{ class_obj.name_word }}_{{ subject_obj.name }}"><span class="rbt-badge">{{ subject_obj.name }}</span></a>
+                                {% for subject in class.subjects.all %}
+                                    {% if not subject.is_hidden %}
+                                        <a href="#__{{ class.name_word }}_{{ subject.name|slugify }}"><span class="rbt-badge">{{ subject.name }}</span></a>
+                                    {% endif %}
                                 {% endfor %}
                             </div>
                         </div>

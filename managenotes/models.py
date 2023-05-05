@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Class(models.Model):
     name = models.CharField(max_length=4)
     name_computing = models.CharField(max_length=4, default="")
@@ -17,6 +18,8 @@ class Class(models.Model):
         hidden_str = " (hidden)" if self.is_hidden else ""
         return f"{self.__str__()}{hidden_str}"
 
+
+
 class Subject(models.Model):
     name = models.CharField(max_length=32)
     class_field = models.ForeignKey(Class, on_delete=models.CASCADE, related_name='subjects')
@@ -30,7 +33,9 @@ class Subject(models.Model):
     def _subject_name(self):
         hidden_str = " (hidden)" if self.is_hidden else ""
         return f"C{self.class_field.name} - {self.name}{hidden_str}"
-        
+
+
+ 
 class Notes(models.Model):
     chapter_number = models.CharField(max_length=8)
     chapter_name = models.CharField(max_length=64)
@@ -42,7 +47,6 @@ class Notes(models.Model):
         hidden_str = " (hidden)" if self.is_hidden else ""
         try: return f"Chapter {int(self.chapter_number)}: {self.chapter_name}{hidden_str}"
         except: return f"Chapter {(self.chapter_number)}: {self.chapter_name}{hidden_str}"
-
     @property
     def _chapter_name(self):
         hidden_str = " (hidden)" if self.is_hidden else ""

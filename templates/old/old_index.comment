@@ -1,0 +1,10 @@
+{% comment %} {% block main_content %}
+{% include 'select_class.html' with class_name_=class.name class_name_word_=class.name_word %}
+{% for class in classes %}
+    {% if class.name|add:0|divisibleby:2 %}
+    {% include 'class_n_left.html' with class_name=class.name class_name_word=class.name_word %}
+    {% else %}
+    {% include 'class_n_right.html' with class_name=class.name class_name_word=class.name_word %}
+    {% endif %}
+{% endfor %}
+{% endblock main_content %} {% endcomment %}

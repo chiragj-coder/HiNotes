@@ -245,7 +245,7 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  scroll-margin-top: 200px;
+  scroll-margin-top: 240px;
 }
 
 article,
@@ -28579,3 +28579,35 @@ Course Sidebar
 /* #my-id-link {
   scroll-margin-top: 60px;
 } */
+
+
+/* Custom Defined List */
+.cdl-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+.cdl-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: calc(100% / n);
+  max-height: calc(5 * 20%);
+  overflow: hidden;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+
+
+.cdl-list li {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  margin-bottom: 5px;
+}

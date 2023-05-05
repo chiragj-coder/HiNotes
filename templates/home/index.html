@@ -1,0 +1,13 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+
+{% block webpage_title %}Home{% endblock %}
+
+{% block class_animation_info %}{% for class in classes %}{% if not class.is_hidden %}<b class="{% if forloop.first %}is-visible{% else %}is-hidden{% endif %} theme-gradient">{{ class.name }}th</b>{% endif %}{% endfor %}{% endblock class_animation_info %}
+
+
+{% block main_content %}
+{% include 'home/select_class.html'%}
+{% for class in classes %}{% if not class.is_hidden %}{% include 'home/adv_tab_single_class.html' with class=class %}{% endif %}{% endfor %}
+{% endblock main_content %}

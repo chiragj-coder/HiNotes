@@ -2,9 +2,9 @@
 {% load custom_filters %}
 
 <!-- Start Notes Presentation Area  -->
-{% for class_obj in classes %}
-    {% if not class_obj.is_hidden %}
-        {% if class_obj.name == class_name %}
+{% for class in classes %}
+    {% if not class.is_hidden %}
+        {% if class.name == class_name %}
             <div class="rbt-inner-page-layout-area bg-color-white rbt-section-gap rbt-shape-bg-area top-circle-shape-top" id="{{ class_name_word }}">
                 <div class="wrapper position-relative overflow-hidden">
                     <div class="rbt-splite-style">
@@ -18,15 +18,15 @@
                                         
                                         <h5 class="subtitle mb--20">Get Notes:</h5>
                                         <div class="row">
-                                            {% for subject_obj in class_obj.subjects.all %}
-                                                {% if not subject_obj.is_hidden %}
-                                                    <div class="subjectcontent col-lg-4 col-md-4 col-sm-6 col-12 mt--30" id="{{ class_name_word }}_{{ subject_obj.name }}">
+                                            {% for subject in class.subjects.all %}
+                                                {% if not subject.is_hidden %}
+                                                    <div class="subjectcontent col-lg-4 col-md-4 col-sm-6 col-12 mt--30" id="{{ class_name_word }}_{{ subject.name }}">
                                                         <div class="footer-widget">
-                                                            <h5 class="ft-title">{{ subject_obj.name }}</h5>
+                                                            <h5 class="ft-title">{{ subject.name }}</h5>
                                                             <ul class="ft-link">
-                                                                {% for note_obj in subject_obj.notes.all %}
-                                                                    {% if not note_obj.is_hidden %}
-                                                                        <li><i data-feather="arrow-right"></i><a href="{{ note_obj.file.url|urldecode }}">Ch {{ note_obj.chapter_number }}: {{ note_obj.chapter_name }}</a></li>
+                                                                {% for note in subject.notes.all %}
+                                                                    {% if not note.is_hidden %}
+                                                                        <li><i data-feather="arrow-right"></i><a href="{{ note.file.url|urldecode }}">Ch {{ note.chapter_number }}: {{ note.chapter_name }}</a></li>
                                                                     {% endif %}
                                                                 {% endfor %}
                                                             </ul>

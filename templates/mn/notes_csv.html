@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Get Notes CSV</title>
+</head>
+<body>
+	<h1>Notes CSV</h1>
+	<table>
+		{% for row in csv_data|safe|linebreaksbr %}
+		<tr>
+			{% for column in row %}
+			<td>{{ column }}</td>
+			{% endfor %}
+		</tr>
+		{% endfor %}
+	</table>
+</body>
+</html>

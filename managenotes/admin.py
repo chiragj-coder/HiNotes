@@ -1,7 +1,6 @@
 from django.contrib import admin
 
 
-
 class ClassAdmin(admin.ModelAdmin):
     # Define the fields to display in the list view for the Class model
     list_display = ('_class_name', 'name_word', 'is_hidden')
@@ -27,6 +26,7 @@ class ClassAdmin(admin.ModelAdmin):
     actions = [hide_classes,unhide_subjects]
 
 
+
 class SubjectAdmin(admin.ModelAdmin):
     # Define the fields to display in the list view for the Subject model
     list_display = ('_subject_name', 'class_field', 'is_hidden')
@@ -50,6 +50,7 @@ class SubjectAdmin(admin.ModelAdmin):
     def unhide_subjects(self, request, queryset):
         queryset.update(is_hidden=False)
     unhide_subjects.short_description = "Unhide selected subjects"
+
 
 
 
@@ -82,6 +83,7 @@ class NotesAdmin(admin.ModelAdmin):
         queryset.update(is_hidden=False)
         self.message_user(request, f"{queryset.count()} notes were successfully unhidden.")
     unhide_notes.short_description = "Unhide selected notes"
+
 
 
 # Register models
