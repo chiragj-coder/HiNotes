@@ -19,7 +19,7 @@
                             {% if not subject.is_hidden %}
                                 <li role="presentation">
                                     <a href="#" class="tab-button {% if forloop.first %}active{% endif %}" id="_{{ class.name_word }}_{{ subject.name|slugify }}" data-bs-toggle="tab" data-bs-target="#__{{class.name_word}}_{{subject.name|slugify}}" role="tab" aria-controls="___{{ class.name_word }}_{{ subject.name|slugify }}" aria-selected="false">
-                                        <span class="title">{{ class.name_word }}_{{ subject.name }}</span>
+                                        <span class="title">{{ subject.name }}</span>
                                     </a>
                                 </li>
                             {% endif %}
@@ -35,11 +35,11 @@
                                 <div class="content row">
                                     <div class="subjectcontent col-lg-4 col-md-4 col-sm-6 col-12 mt--30" id="{{ class.name_word }}_{{ subject.name|slugify }}">
                                         <div class="footer-widget">
-                                            <h5 class="ft-title">{{ subject.name }}</h5>
+                                            {% comment %} <h5 class="ft-title">{{ subject.name }}</h5> {% endcomment %}
                                             <ul class="ft-link">
                                                 {% for note in subject.notes.all %}
                                                     {% if not note.is_hidden %}
-                                                        <li><i data-feather="arrow-right"></i><a href="{{ note.file.url|urldecode }}">Ch {{ note.chapter_number }}: {{ note.chapter_name }}</a></li>
+                                                        <li style="display: flex;"><i style="min-width: min-content;" data-feather="arrow-right"></i><a href="{{ note.file.url|urldecode }}">Ch {{ note.chapter_number }}: {{ note.chapter_name }}</a></li>
                                                     {% endif %}
                                                 {% endfor %}
                                             </ul>
