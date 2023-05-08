@@ -53,8 +53,5 @@ def get_csv(request):
     for note in notes:
         writer.writerow([note.subject.class_field.name, note.subject.name, note.is_hidden, note.chapter_number, note.chapter_name, note.file.url])
 
-    # get the CSV data as a string
-    csv_data = HttpResponse().content.decode('utf-8')
-
-    # render a template with the CSV data
+    # send csv file
     return response

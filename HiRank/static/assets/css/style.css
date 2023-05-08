@@ -28611,3 +28611,33 @@ Course Sidebar
   padding: 10px;
   margin-bottom: 5px;
 }
+
+/* Show notes_tabular on large screens */
+@media only screen and (min-width: 768px) {
+  #notes_tabular {
+    display: block;
+  }
+  #notes_adv_tab {
+    display: none;
+  }
+}
+
+/* Hide notes_tabular on small screens */
+@media only screen and (max-width: 767px) {
+  #notes_tabular {
+    display: none;
+  }
+  #notes_adv_tab {
+    display: block;
+  }
+}
+
+/* Hide notes_adv_tab on large screens
+@media only screen and (min-width: 768px) {
+  
+}
+
+/* Show notes_adv_tab on small screens */
+/* @media only screen and (max-width: 767px) { */
+  
+/* } */

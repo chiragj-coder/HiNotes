@@ -20,7 +20,7 @@
                                         <div class="row">
                                             {% for subject in class.subjects.all %}
                                                 {% if not subject.is_hidden %}
-                                                    <div class="subjectcontent col-lg-4 col-md-4 col-sm-6 col-12 mt--30" id="{{ class_name_word }}_{{ subject.name }}">
+                                                <div class="subjectcontent col-lg-6 col-md-6 col-sm-12 col-12 mt--30" id="{{ class_name_word }}_{{ subject.name }}">
                                                         <div class="footer-widget">
                                                             <h5 class="ft-title">{{ subject.name }}</h5>
                                                             <ul class="ft-link">

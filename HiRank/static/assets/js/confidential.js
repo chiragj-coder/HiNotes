@@ -17,10 +17,10 @@ if (username in users) {
         // If the password is correct, allow access to the website
     } else {
         // If the password is incorrect, deny access to the website
-        window.location.href = 'https://www.HiNotes.pythonanywhere.com'; // Redirect to homepage
+        window.location.href = 'https://www.HiRank.pythonanywhere.com'; // Redirect to homepage
     }
 } else {
     // If the username is invalid, deny access to the website
-    window.location.href = 'https://www.HiNotes.pythonanywhere.com'; // Redirect to homepage
+    window.location.href = 'https://www.HiRank.pythonanywhere.com'; // Redirect to homepage
 }
 

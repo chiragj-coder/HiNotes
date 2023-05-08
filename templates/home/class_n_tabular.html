@@ -1,0 +1,42 @@
+{% load static %} {% load custom_filters %}
+
+<div id="notes_tabular">
+    <!-- Start Notes Presentation Area  -->
+    <div class="rbt-inner-page-layout-area bg-color-white rbt-section-gap rbt-shape-bg-area top-circle-shape-top" id="{{ class.name_word }}">
+        <div class="wrapper position-relative overflow-hidden">
+          <div class="rbt-splite-style">
+            <div class="split-wrapper">
+              <div class="row g-0 align-items-center">
+                <div class="col-lg-12 col-xl-12 col-12">
+                  <div class="split-inner">
+                    <span class="rbt-badge-6 bg-primary-opacity">Excellent Notes</span>
+                    <h4 class="title">CLASS {{class.name}}TH</h4>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit.Praesentium?</p>
+                    <h5 class="subtitle mb--20">Get Notes:</h5>
+                    <div class="row">
+                      {% for subject in class.subjects.all %} {% if not subject.is_hidden %}
+                      <div class="subjectcontent col-lg-4 col-md-4 col-sm-6 col-12 mt--30" id="__{{ class.name_word }}_{{ subject.name|slugify }}">
+                        <div class="footer-widget">
+                          <h5 class="ft-title">{{ subject.name }}</h5>
+                          <ul class="ft-link">
+                            {% for note in subject.notes.all %} {% if not note.is_hidden %}
+                            <li><i data-feather="arrow-right"></i><a href="{{ note.file.url|urldecode }}">Ch {{ note.chapter_number }}: {{note.chapter_name }}</a></li>
+                            {% endif %} {% endfor %}
+                          </ul>
+                        </div>
+                      </div>
+                      {% endif %} {% endfor %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="top-circle-shape"></div>
+        </div>
+        <div class="rbt-shape-bg">
+          <img src="{% static 'assets/images/splash/bg/left-right-line-small.svg' %}" alt="Shape Images"/>
+        </div>
+      </div>
+      <!-- End Notes Presentation Area  -->
+  </div>

@@ -8,6 +8,11 @@
 
 
 {% block main_content %}
-{% include 'dev/dev_select_class.html'%}
-{% for class in classes %}{% if not class.is_hidden %}{% include 'dev/dev_adv_tab_single_class.html' with class=class %}{% endif %}{% endfor %}
+{% include 'dev/select_class.html'%}
+{% for class in classes %}
+    {% if not class.is_hidden %}
+        {% include 'dev/class_n_tabular.html' with class=class %}
+        {% include 'dev/class_n_adv_tab.html' with class=class %}
+    {% endif %}
+{% endfor %}
 {% endblock main_content %}

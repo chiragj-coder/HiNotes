@@ -47,6 +47,7 @@ class Notes(models.Model):
         hidden_str = " (hidden)" if self.is_hidden else ""
         try: return f"Chapter {int(self.chapter_number)}: {self.chapter_name}{hidden_str}"
         except: return f"Chapter {(self.chapter_number)}: {self.chapter_name}{hidden_str}"
+
     @property
     def _chapter_name(self):
         hidden_str = " (hidden)" if self.is_hidden else ""
