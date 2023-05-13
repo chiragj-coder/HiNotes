@@ -1,7 +1,7 @@
 {% load static %}
 <!-- Start Classes Area  -->
-<div class="rbt-splash-coding-quality-area bg-color-white rbt-section-gapBottom" class="mobile-invisible mobile-invisible">
-    <div class="wrapper mobile-invisible">
+<div class="rbt-splash-coding-quality-area bg-color-white rbt-section-gapBottom" class="mobile-visible">
+    <div class="wrapper mobile-visible">
         <div class="container">
             <div class="row mb--60">
                 <div class="col-lg-12">
@@ -20,7 +20,7 @@
                         <div class="inner">
                             <div class="content">
                                 <span class="pre-title text-uppercase">BECOME A TOPPER</span>
-                                <a href="#{{ class.name_word }}"><h4 class="title">CLASS {{class.name}}TH</h4></a>
+                                <a href="#_{{ class.name_word }}"><h4 class="title">CLASS {{class.name}}TH</h4></a>
                             </div>
                             {% comment %} <div class="thumbnail">
                                 <img src="{% static 'assets/images/splash/topfeature/01.png' %}" alt="Image" width="128px">
@@ -28,7 +28,7 @@
                             <div class="rbt-badge-group">
                                 {% for subject in class.subjects.all %}
                                     {% if not subject.is_hidden %}
-                                        <a href="#{{ class.name_word }}_{{ subject.name|slugify }}"><span class="rbt-badge">{{ subject.name }}</span></a>
+                                        <a href="#___{{ class.name_word }}_{{ subject.name|slugify }}"><span class="rbt-badge">{{ subject.name }}</span></a>
                                     {% endif %}
                                 {% endfor %}
                             </div>

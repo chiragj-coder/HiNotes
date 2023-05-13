@@ -1,8 +1,8 @@
 {% load static %}
 {% load custom_filters %}
 
-<div id="notes_adv_tab">
-    <div class="rbt-advance-tab-area rbt-section-gap bg-color-extra2" id="{{ class.name_word }}">
+<div id="notes_adv_tab" class="mobile-visible">
+    <div class="rbt-advance-tab-area rbt-section-gap bg-color-extra2" id="_{{ class.name_word }}">
         <div class="container">
             <div class="row mb--40">
                 <div class="col-lg-12">
@@ -19,7 +19,7 @@
                             {% for subject in class.subjects.all %}
                                 {% if not subject.is_hidden %}
                                     <li role="presentation">
-                                        <a href="#" class="tab-button {% if forloop.first %}active{% endif %}" id="_{{ class.name_word }}_{{ subject.name|slugify }}" data-bs-toggle="tab" data-bs-target="#__{{class.name_word}}_{{subject.name|slugify}}" role="tab" aria-controls="___{{ class.name_word }}_{{ subject.name|slugify }}" aria-selected="false">
+                                        <a href="#" class="tab-button {% if forloop.first %}active{% endif %}" id="__{{ class.name_word }}_{{ subject.name|slugify }}" data-bs-toggle="tab" data-bs-target="#___{{class.name_word}}_{{subject.name|slugify}}" role="tab" aria-controls="___{{ class.name_word }}_{{ subject.name|slugify }}" aria-selected="false">
                                             <span class="title">{{ subject.name }}</span>
                                         </a>
                                     </li>
@@ -32,9 +32,9 @@
                     <div class="tab-content advance-tab-content-style-2">
                         {% for subject in class.subjects.all %}
                             {% if not subject.is_hidden %}
-                                <div class="tab-pane fade {% if forloop.first %}active show{% endif %}" id="__{{ class.name_word }}_{{ subject.name|slugify }}" role="tabpanel" aria-labelledby="_{{ class.name_word }}_{{ subject.name|slugify }}">
+                                <div class="tab-pane fade {% if forloop.first %}active show{% endif %}" id="___{{ class.name_word }}_{{ subject.name|slugify }}" role="tabpanel" aria-labelledby="_{{ class.name_word }}_{{ subject.name|slugify }}">
                                     <div class="content row">
-                                        <div class="subjectcontent col-lg-4 col-md-4 col-sm-6 col-12 mt--30" id="{{ class.name_word }}_{{ subject.name|slugify }}">
+                                        <div class="subjectcontent col-lg-4 col-md-4 col-sm-6 col-12 mt--30" id="__{{ class.name_word }}_{{ subject.name|slugify }}">
                                             <div class="footer-widget">
                                                 {% comment %} <h5 class="ft-title">{{ subject.name }}</h5> {% endcomment %}
                                                 <ul class="ft-link">

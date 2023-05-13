@@ -5,14 +5,13 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>{% block webpage_title %}{% endblock %} - HiRank</title>
+    <title>{% block webpage_title %}{% endblock %} - HiNotes</title>
     <meta name="robots" content="noindex, follow" />
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/images/favicon.png' %}">
-    {% block login %}{% endblock login %}
 
     <!-- CSS
 	============================================ -->
@@ -301,7 +300,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-12">
-                    <p class="rbt-link-hover text-center color-white-off">HiRank by <a href="https://chiragj-coder.github.io/" class="color-white">Developer Chirag Jain</a> © All rights reserved</p>
+                    <p class="rbt-link-hover text-center color-white-off">HiNotes by <a href="https://chiragj-coder.github.io/" class="color-white">Developer Chirag Jain</a> © All rights reserved</p>
                 </div>
             </div>
         </div>
@@ -352,35 +351,50 @@
     <script>
         if (window.matchMedia("(max-width: 768px)").matches) {
             document.addEventListener('DOMContentLoaded', () => {
-                // get all the anchor tags that need to trigger tab clicks
-                const tabLinks = document.querySelectorAll('a[href^="#__"]');
-              
-                // loop through each anchor tag and add a click event listener
-                tabLinks.forEach(link => {
-                  link.addEventListener('click', event => {
-                    // prevent the default link behavior
-                    event.preventDefault();
-              
-                    // get the ID of the corresponding tab
-                    const tabId = link.getAttribute('href');
-              
-                    // click on the tab button to activate it
-                    const tabButton = document.querySelector(`a[data-bs-toggle="tab"][data-bs-target="${tabId}"]`);
-                    if (tabButton) {
-                      tabButton.click();
-              
-                      // wait for the tab to finish loading before scrolling to it
-                      const tabContent = document.querySelector(tabId);
-                      tabContent.scrollIntoView({
-                          behavior: 'smooth',
-                          block: 'start'
+              // get all the anchor tags that need to trigger tab clicks
+              const tabLinks = document.querySelectorAll('a[href^="#___"]');
+            
+              // loop through each anchor tag and add a click event listener
+              tabLinks.forEach(link => {
+                link.addEventListener('click', event => {
+                  // prevent the default link behavior
+                  event.preventDefault();
+          
+                  // get the ID of the corresponding tab
+                  const tabId = link.getAttribute('href');
+          
+                  // get the class name from the tab ID
+                  const className = tabId.split('_')[1];
+          
+                  // activate the class tab if it's not already active
+                  const classTabButton = document.querySelector(`a.tab-button[data-bs-target="#_notes_adv_tab"][href="#_${className}"]`);
+                  if (classTabButton && !classTabButton.classList.contains('active')) {
+                    classTabButton.click();
+                  }
+          
+                  // click on the tab button to activate it
+                  const tabButton = document.querySelector(`a[data-bs-toggle="tab"][data-bs-target="${tabId}"]`);
+                  if (tabButton) {
+                    tabButton.click();
+          
+                    // wait for the tab to finish loading before scrolling to it
+                    const tabContent = document.querySelector(tabId);
+                    // add an event listener for the shown.bs.tab event on the tab content
+                    tabContent.addEventListener('shown.bs.tab', () => {
+                        // scroll to the tab content
+                        tabContent.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
                         });
-                    }
-                  });
+                    });
+                  }
                 });
               });
-              
+            });
           }
+          
+          
+          
     </script>
 </body>
 

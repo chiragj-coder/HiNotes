@@ -626,6 +626,12 @@ body {
     font-size: 16px;
     line-height: 1.5;
   }
+  #select_class {
+    display: none;
+  }
+  #select_class_mobile {
+    display: block;
+  }
 }
 
 h1,
@@ -28614,30 +28620,20 @@ Course Sidebar
 
 /* Show notes_tabular on large screens */
 @media only screen and (min-width: 768px) {
-  #notes_tabular {
+  .mobile-invisible{
     display: block;
   }
-  #notes_adv_tab {
+  .mobile-visible{
     display: none;
   }
 }
 
 /* Hide notes_tabular on small screens */
 @media only screen and (max-width: 767px) {
-  #notes_tabular {
-    display: none;
-  }
-  #notes_adv_tab {
+  .mobile-visible{
     display: block;
   }
+  .mobile-invisible{
+    display: none;
+  }
 }
-
-/* Hide notes_adv_tab on large screens
-@media only screen and (min-width: 768px) {
-  
-}
-
-/* Show notes_adv_tab on small screens */
-/* @media only screen and (max-width: 767px) { */
-  
-/* } */
